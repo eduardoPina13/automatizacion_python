@@ -10,24 +10,29 @@ with open("list.json") as json_file:
     for p in data["login"]: 
         print(p["name"] + " iniciara sesion")
 
-        driver.get("https://todoist.com/users/showlogin")
+        driver.get("https://todoist.com/")
 
         time.sleep(3)
 
-        mail = driver.find_element_by_id("data[email]")
+        redBtn = driver.find_element_by_class_name("_2q_cf")
+        redBtn.click()
+
+        mail = driver.find_element_by_id("email")
         mail.send_keys(p["name"])
 
-        passw = driver.find_element_by_id("data[password]")
+        passw = driver.find_element_by_id("password")
         passw.send_keys(p["pwd"])
 
-        loginBtn = driver.find_elements_by_class_name("data[ist_button]")
+        loginBtn = driver.find_element_by_class_name("ist_button")
+        loginBtn.click()
 
         for x in data["articulos"]:
-            loginBtn = driver.find_elements_by_class_name("data[plus_add_button]")
+            loginBtn = driver.find_element_by_class_name("plus_add_button")
 
-            tarea = driver.find_element_by_class_name("data[DraftEditor-editorContainer]")
+            tarea = driver.find_element_by_class_name("DraftEditor-editorContainer")
             tarea.send_keys(p["name"])
 
-            AddBtn = driver.find_element_by_class_name("data[ist_button]")
+            addBtn = driver.find_element_by_class_name("dataist_button")
+            addBtn.click()
 
 driver.close()
