@@ -1,0 +1,22 @@
+{
+    "login":[
+        {
+            "name": "joseeduardo1996@live.com",
+            "pwd": "Pineapple1396"
+        }
+    ],
+    "articulos":[
+        {
+            "name":"salud"
+        },
+        {
+            "name":"tarea"
+        },
+        {
+            "name":"aprendizaje"
+        },
+        {
+            "name":"ejercicio"
+        }
+    ]
+}
